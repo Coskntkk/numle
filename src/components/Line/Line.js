@@ -15,7 +15,7 @@ function Line({ items, bgColors }) {
             </div>
           );
         } catch (error) {
-          console.log(error);
+          return;
         }
       })}
     </div>
