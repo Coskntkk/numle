@@ -7,7 +7,6 @@ body,
 
 .app {
   height: 100%;
-  width: 30%;
   margin: 0 auto;
   align-items: center;
   padding: auto 35%;
@@ -52,7 +51,6 @@ body,
 }
 
 .keys {
-  width: 30%;
   position: fixed;
   display: flex;
   bottom: 5%;
