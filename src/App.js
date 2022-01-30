@@ -149,73 +149,72 @@ function App() {
   return (
     <>
       <div className="app d-flex justify-content-center row overflow-auto col-lg-3 col-md-8 col-sm-12">
-          <Nav />
+        <Nav />
 
-          <div className="game col-12" id="scroll">
+        <div className="game col-12" id="scroll">
 
-            {oldGuess.map((item, index) => (
-              <Line 
+          {oldGuess.map((item, index) => (
+            <Line 
+              key={nanoid()}
+              items={item}
+              bgColors={oldColors[index]}
+            />
+          ))}
+          {!done && (
+            <Line
+              key={nanoid()}
+              items={guess}
+              bgColors={colors}
+            />
+          )}
+          {over && (
+            <Line
+              key={nanoid()}
+              items={guess}
+              bgColors={["lightgreen", "lightgreen", "lightgreen", "lightgreen"]}
+            />
+          )}
+
+          {done && 
+            <div className="won">
+            <h1>You win!</h1>
+            <p>You have guessed the number in {oldGuess.length} steps.</p>
+            <button className="btn btn-success copy" onClick={makeCopy}>Copy to clipboard</button>
+          </div>}
+
+        </div>
+
+        <div className="keys col-lg-3 col-md-12 col-sm-8 row">
+          <form>
+            {numbers.map((digit) => (
+              <Key
                 key={nanoid()}
-                items={item}
-                bgColors={oldColors[index]}
+                digit={digit}
+                guess={guess}
+                setGuess={setGuess}
+                setNumbers={setNumbers}
+                done={done}
               />
             ))}
-            {!done && (
-              <Line
-                key={nanoid()}
-                items={guess}
-                bgColors={colors}
-              />
-            )}
-            {over && (
-              <Line
-                key={nanoid()}
-                items={guess}
-                bgColors={["lightgreen", "lightgreen", "lightgreen", "lightgreen"]}
-              />
-            )}
-
-            {done && 
-              <div className="won">
-              <h1>You win!</h1>
-              <p>You have guessed the number in {oldGuess.length} steps.</p>
-              <button className="btn btn-success copy" onClick={makeCopy}>Copy to clipboard</button>
-            </div>}
-
-          </div>
-
-          <div className="keys col-lg-3 col-md-12 col-sm-8 row">
-            <form>
-              {numbers.map((digit) => (
-                <Key
-                  key={nanoid()}
-                  digit={digit}
-                  guess={guess}
-                  setGuess={setGuess}
-                  setNumbers={setNumbers}
-                  done={done}
-                />
-              ))}
-              <button
-                type="submit"
-                className="key2 col-6"
-                disabled={done}
-                onClick={(e) => pressEnter(e)}
-              >
-                Enter
-              </button>
-              <button
-                type="submit"
-                className="key2 col-6 backspace"
-                disabled={done}
-                onClick={(e) => pressBackspace(e)}
-              >
-                <i className="fas fa-backspace fa-2x"></i>
-              </button>
-            </form>
-          </div>
+            <button
+              type="submit"
+              className="key2 col-6"
+              disabled={done}
+              onClick={(e) => pressEnter(e)}
+            >
+              Enter
+            </button>
+            <button
+              type="submit"
+              className="key2 col-6 backspace"
+              disabled={done}
+              onClick={(e) => pressBackspace(e)}
+            >
+              <i className="fas fa-backspace fa-2x"></i>
+            </button>
+          </form>
         </div>
-      )
+      </div>
     </>
   );
 }
