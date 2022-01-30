@@ -5,6 +5,8 @@
 Numle is a game where you guess a 4-digit number with no repeating digits.
 Numle is inspired by the famous game Wordle.
 
+[ Visit site. ]( https://numle.vercel.app/ )
+
 
 ## Instructions
 
