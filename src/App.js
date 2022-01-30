@@ -40,19 +40,23 @@ function App() {
         setSolution(gameObj.solution);
         setGuess(gameObj.guess);
         setOver(true)
+      } else {
+        const solutionRaw = getDailyRandomNumber();
+        setSolution(solutionRaw.toString());
       }
     } else {
-      const solution = getDailyRandomNumber();
-      setSolution(solution.toString());
+      const solutionRaw = getDailyRandomNumber();
+      setSolution(solutionRaw.toString());
     }
   }, []);
+
 
   function checkColors() {
     const tempGuess = [...guess];
     const tempColors = [...colors];
     const tempNumbers = [...numbers];
     const tempOldColors = [...oldColors];
-    const sol = solution.toString().split("");
+    const sol = solution.split("");
     for (let i = 0; i < 4; i++) {
       if (tempGuess[i] == sol[i] ) {
         tempColors[i] = "lightgreen";
