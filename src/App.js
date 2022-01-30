@@ -148,7 +148,7 @@ function App() {
 
   return (
     <>
-      <div className="app d-flex justify-content-center row overflow-auto">
+      <div className="app d-flex justify-content-center row overflow-auto col-lg-3 col-md-8 col-sm-12">
           <Nav />
 
           <div className="game col-12" id="scroll">
@@ -184,7 +184,7 @@ function App() {
 
           </div>
 
-          <div className="keys col-12 row">
+          <div className="keys col-lg-3 col-md-12 col-sm-8 row">
             <form>
               {numbers.map((digit) => (
                 <Key
