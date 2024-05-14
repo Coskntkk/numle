@@ -48,6 +48,7 @@ function App() {
       const solutionRaw = getDailyRandomNumber();
       setSolution(solutionRaw.toString());
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
@@ -58,10 +59,10 @@ function App() {
     const tempOldColors = [...oldColors];
     const sol = solution.split("");
     for (let i = 0; i < 4; i++) {
-      if (tempGuess[i] == sol[i] ) {
+      if (tempGuess[i] === sol[i] ) {
         tempColors[i] = "lightgreen";
         tempNumbers[tempGuess[i]][1] = "lightgreen";
-      } else if (tempGuess[i] != sol[i] && sol.includes(tempGuess[i])) {
+      } else if (tempGuess[i] !== sol[i] && sol.includes(tempGuess[i])) {
         tempColors[i] = "yellow";
         tempNumbers[tempGuess[i]][1] = "yellow";
       } else if (!sol.includes(tempGuess[i])) {
