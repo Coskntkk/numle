@@ -1,37 +1,53 @@
-![Numle ]( https://i.imgur.com/cAd8Txw.png )
+# Numle - Daily Number Puzzle Game
 
-## Numle Guessing Game
+Numle is an addictive daily 4-digit number guessing puzzle inspired by Wordle. Built as a lightweight, zero-dependency, standalone single-page web app using **Vanilla HTML5, CSS3, and JavaScript**.
 
-Numle is a game where you guess a 4-digit number with no repeating digits.
-Numle is inspired by the famous game Wordle.
+[Play Numle Live](https://coskntkk.github.io/numle/)
 
-[ Visit site. ]( https://numle.vercel.app/ )
+---
 
+## 🎯 How to Play
 
-## Instructions
+1. **Objective**: Guess the secret 4-digit number in 6 tries.
+2. **Rules**:
+   - Each guess must be a valid 4-digit integer (from 1023 to 9876).
+   - All 4 digits must be **distinct** (no duplicate digits allowed).
+   - The first digit cannot be 0.
+3. **Color Cues**:
+   - 🟩 **Green**: Digit is in the secret number and in the correct spot.
+   - 🟨 **Yellow**: Digit is in the secret number but in the wrong spot.
+   - ⬛ **Dark Gray**: Digit is not in the secret number.
 
-- You will be given a random 4-digit number.
-- You will have unlimited guesses to guess the number.
-- The game will tell you if your guessed digits are in the correct position or not.
-- Every day you will get a new number.
+---
 
+## ✨ Features
 
-## Tech 
+- 📅 **Daily Challenge**: Seeded deterministic daily puzzle synchronized globally.
+- 🎮 **Practice Mode**: Unlimited random games for endless replayability.
+- ⌨️ **Physical & Virtual Keyboard**: Play smoothly with your keyboard/numpad or responsive touch keypad.
+- 📊 **Statistics & Streaks**: Track games played, win rate %, current streak, max streak, and guess distribution chart in `localStorage`.
+- ⏳ **Countdown Timer**: Live countdown to midnight for the next daily puzzle.
+- 📋 **Share with Friends**: One-click clipboard share with formatted emoji results.
+- ✨ **Fluid Micro-Animations**: 3D card flips, row shakes on errors, pop tile typing, and celebratory win bounces.
+- 🌙 **Modern Glassmorphic Dark UI**: Custom Outfit / Inter typography with responsive layout for mobile and desktop.
+- ⚡ **Zero Dependencies**: Pure Vanilla HTML, CSS, and JS — instant loading with no build step required.
 
-This game was built with the React.js.
+---
 
+## 🚀 Running Locally
 
-## Roadmap for the future
+Open `index.html` directly in any web browser, or start a local static server:
 
-- UI improvements
-- Keyboard input support
+```bash
+# Using Python
+python3 -m http.server 3000
 
+# Or using npx
+npx serve .
+```
 
-## Author
+---
+
+## 👨‍💻 Author
 
 Coşkun Atak ([@Coskntkk](https://github.com/Coskntkk))
-
-
-## Screenshots
-
-![ Screenshot 1 ]( https://i.imgur.com/lFgUlSH.png )
